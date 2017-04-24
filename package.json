@@ -4,6 +4,7 @@
   "scripts": {},
   "dependencies": {
     "@angular/common": "~4.0.0",
+    "@angular/compiler": "~4.0.0",
     "@angular/core": "~4.0.0",
     "@angular/forms": "~4.0.0",
     "@angular/http": "~4.0.0",
@@ -17,6 +18,7 @@
     "zone.js": "^0.7.6"
   },
   "devDependencies": {
+    "@types/node": "7.0.13",
     "angular2-template-loader": "^0.6.2",
     "aspnet-webpack": "^1.0.17",
     "awesome-typescript-loader": "^3.0.0",
