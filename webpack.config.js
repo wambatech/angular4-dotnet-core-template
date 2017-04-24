@@ -21,10 +21,31 @@ module.exports = (env) => {
         },
         module: {
             rules: [
-                { test: /\.ts$/, include: /ClientApp/, use: ["awesome-typescript-loader?silent=true", "angular2-template-loader"] },
-                { test: /\.html$/, use: "html-loader?minimize=false" },
-                { test: /\.css$/, use: ["to-string-loader", "css-loader"] },
-                { test: /\.(png|jpg|jpeg|gif|svg)$/, use: "url-loader?limit=25000" }
+                {
+                    test: /\.ts$/,
+                    include: /ClientApp/,
+                    use: ["awesome-typescript-loader?silent=true", "angular2-template-loader"]
+                },
+                {
+                    test: /\.html$/,
+                    exclude: /node_modules/,
+                    use: "html-loader?minimize=false"
+                },
+                {
+                    test: /\.css$/,
+                    exclude: /node_modules/,
+                    use: ["to-string-loader", "css-loader"]
+                },
+                {
+                    test: /\.(png|jpg|jpeg|gif|svg)$/,
+                    exclude: /node_modules/,
+                    use: "url-loader?limit=25000"
+                },
+                {
+                    test: /\.less$/,
+                    exclude: /node_modules/,
+                    loader: 'raw-loader!less-loader'
+                }
             ]
         },
         plugins: [

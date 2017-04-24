@@ -19,12 +19,14 @@ module.exports = (env) => {
                 {
                     test: /\.(png|woff|woff2|eot|ttf|svg)(\?|$)/,
                     use: "url-loader?limit=100000"
-                },
-                {
-                    test: /\.js$/,
-                    loader: 'rollup-loader'
-                }
-            ]
+                }].concat(
+                isDevBuild ?
+                    [] :
+                    [
+                        {
+                            test: /\.js$/,
+                            loader: 'rollup-loader'
+                        }])
         },
         entry: {
             vendor: [
